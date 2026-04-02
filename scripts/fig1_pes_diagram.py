@@ -141,8 +141,7 @@ ax.set_xticks(x_positions)
 ax.set_xticklabels(x_labels, fontsize=10)
 ax.set_ylabel("ΔG (kcal mol⁻¹)", fontsize=12)
 ax.set_title(
-    "Potential Energy Surface: Phenol Nitration via OH• Radical\n"
-    "Ortho and Para Pathways",
+    "Potential Energy Surface: OH• Addition to Phenol — Ortho vs Para Pathways",
     fontsize=14,
     pad=12,
 )
@@ -158,6 +157,62 @@ ax.legend(
     loc="lower left",
     fontsize=10,
     frameon=False,
+)
+
+# ---------------------------------------------------------------------------
+# Emphasis: ΔΔG‡ between TS levels and ΔΔG between adduct levels
+# ---------------------------------------------------------------------------
+ts_x = x_positions[2]
+ts_ortho = ortho_dG[2]
+ts_para  = para_dG[2]
+# Double-headed arrow between TS levels
+ax.annotate(
+    "",
+    xy=(ts_x + BAR_HALF + 0.05, ts_para),
+    xytext=(ts_x + BAR_HALF + 0.05, ts_ortho),
+    arrowprops=dict(arrowstyle="<->", color="#555555", lw=1.2),
+)
+ax.text(
+    ts_x + BAR_HALF + 0.18,
+    (ts_ortho + ts_para) / 2,
+    "ΔΔG‡ = 3.32",
+    ha="left",
+    va="center",
+    fontsize=7.5,
+    color="#555555",
+    style="italic",
+)
+
+adduct_x = x_positions[3]
+adduct_ortho = ortho_dG[3]
+adduct_para  = para_dG[3]
+# Double-headed arrow between adduct levels
+ax.annotate(
+    "",
+    xy=(adduct_x + BAR_HALF + 0.05, adduct_ortho),
+    xytext=(adduct_x + BAR_HALF + 0.05, adduct_para),
+    arrowprops=dict(arrowstyle="<->", color="#555555", lw=1.2),
+)
+ax.text(
+    adduct_x + BAR_HALF + 0.18,
+    (adduct_ortho + adduct_para) / 2,
+    "ΔΔG = 3.82",
+    ha="left",
+    va="center",
+    fontsize=7.5,
+    color="#555555",
+    style="italic",
+)
+
+# H-abstraction note (subtle, bottom-left)
+ax.text(
+    -0.5, -73,
+    "H-abstraction: ΔG = −41.07 kcal/mol (not shown)",
+    ha="left",
+    va="bottom",
+    fontsize=8,
+    color="gray",
+    style="italic",
 )
 
 # Footnote

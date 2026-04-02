@@ -1,8 +1,10 @@
 """
-fig4_selectivity_comparison.py
-================================
+fig2_selectivity.py
+====================
 Grouped horizontal bar chart comparing ortho vs para pathway metrics
-for regioselectivity analysis of phenol nitration.
+for regioselectivity analysis of phenol OH• addition.
+
+Primary figure — demonstrates para pathway superiority across all key metrics.
 """
 
 import os
@@ -148,7 +150,7 @@ ax.set_yticks(y)
 ax.set_yticklabels(metrics, fontsize=10)
 ax.set_xlabel("Energy (kcal mol⁻¹)", fontsize=12)
 ax.set_title(
-    "Ortho vs Para Selectivity: Key Energetic Metrics",
+    "Ortho vs Para Selectivity: OH• Addition to Phenol",
     fontsize=14,
     pad=10,
 )
@@ -161,6 +163,19 @@ ax.set_xlim(current_xlim[0] - 2, current_xlim[1] + 18)
 
 # Legend
 ax.legend(fontsize=10, frameon=False, loc="lower left")
+
+# Summary annotation box
+ax.text(
+    current_xlim[1] + 14,
+    n - 1,
+    "Para pathway\nfavoured in\n4 of 5 metrics",
+    ha="center",
+    va="bottom",
+    fontsize=9,
+    color="#B2182B",
+    fontweight="bold",
+    bbox=dict(boxstyle="round,pad=0.4", facecolor="#FFF0F0", edgecolor="#B2182B", alpha=0.8),
+)
 
 # Footnote
 fig.text(
@@ -179,7 +194,7 @@ plt.tight_layout(rect=[0, 0.04, 1, 1])
 # Save
 # ---------------------------------------------------------------------------
 os.makedirs("figures", exist_ok=True)
-fig.savefig("figures/fig4_selectivity.png", dpi=300, bbox_inches="tight")
-fig.savefig("figures/fig4_selectivity.pdf", bbox_inches="tight")
+fig.savefig("figures/fig2_selectivity.png", dpi=300, bbox_inches="tight")
+fig.savefig("figures/fig2_selectivity.pdf", bbox_inches="tight")
 plt.close(fig)
-print("Saved: figures/fig4_selectivity.png  figures/fig4_selectivity.pdf")
+print("Saved: figures/fig2_selectivity.png  figures/fig2_selectivity.pdf")

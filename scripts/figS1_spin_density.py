@@ -1,8 +1,10 @@
 """
-fig2_spin_density.py
-====================
+figS1_spin_density.py
+======================
 Grouped bar chart of Mulliken spin densities at key atomic sites
 for four key radical intermediates in the phenol nitration mechanism.
+
+Supplementary figure — supporting data for regioselectivity of NO₂• attack.
 """
 
 import os
@@ -55,7 +57,7 @@ plt.rcParams.update({
 # ---------------------------------------------------------------------------
 # Plot
 # ---------------------------------------------------------------------------
-fig, ax = plt.subplots(figsize=(8, 5))
+fig, ax = plt.subplots(figsize=(7, 4.5))
 
 x = np.arange(n_sites)
 total_width = 0.72
@@ -87,8 +89,9 @@ ax.set_xticklabels(sites, fontsize=10)
 ax.set_ylabel("Mulliken Spin Density", fontsize=12)
 ax.set_xlabel("Atomic Site", fontsize=12)
 ax.set_title(
-    "Spin Density Distribution in Key Radical Intermediates",
-    fontsize=14,
+    "Fig. S1 — Spin Density Distribution in Key Radical Intermediates\n"
+    "Supplementary data supporting regioselectivity of NO₂• attack",
+    fontsize=12,
     pad=10,
 )
 ax.tick_params(axis="both", labelsize=10)
@@ -125,7 +128,7 @@ plt.tight_layout()
 # Save
 # ---------------------------------------------------------------------------
 os.makedirs("figures", exist_ok=True)
-fig.savefig("figures/fig2_spin_density.png", dpi=300, bbox_inches="tight")
-fig.savefig("figures/fig2_spin_density.pdf", bbox_inches="tight")
+fig.savefig("figures/figS1_spin_density.png", dpi=300, bbox_inches="tight")
+fig.savefig("figures/figS1_spin_density.pdf", bbox_inches="tight")
 plt.close(fig)
-print("Saved: figures/fig2_spin_density.png  figures/fig2_spin_density.pdf")
+print("Saved: figures/figS1_spin_density.png  figures/figS1_spin_density.pdf")

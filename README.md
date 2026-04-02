@@ -1,22 +1,31 @@
 # Phenol Nitration — Computational Chemistry
 
-Computational study of OH•-initiated and NO₂•-mediated nitration of phenol,
-producing *ortho*- and *para*-nitrophenol via two parallel radical pathways.
+Computational study of OH•-initiated radical nitration of phenol,
+focussing on the **comparison of *ortho* vs *para* OH• addition** to the phenol ring
+as the primary mechanistic pathway producing *ortho*- and *para*-nitrophenol.
 
 ---
 
-## Mechanistic Overview
+## Primary Focus
 
-Two parallel pathways are considered:
+The study centres on the **OH• radical addition** to the phenol ring at the ortho and para
+positions, followed by NO₂• capture to give the final nitrophenol products.  All thermodynamic
+and kinetic metrics favour the *para* pathway (see Key Results below).
 
-**Ortho pathway:**
+### Mechanistic pathways considered
+
+**Ortho pathway (primary):**
 PhOH + OH• → PhOH·OH RC(o) → TS(o) → *o*-OHCHD → [+NO₂•, −H₂O] → *o*-nitrophenol
 
-**Para pathway:**
+**Para pathway (primary):**
 PhOH + OH• → PhOH·OH RC(p) → TS(p) → *p*-OHCHD → [+NO₂•, −H₂O] → *p*-nitrophenol
 
-An additional competing channel is direct H-abstraction by OH•:
-PhOH + OH• → PhO• + H₂O (ΔG = −41.07 kcal/mol)
+**H-abstraction (secondary, briefly noted):**
+PhOH + OH• → PhO• + H₂O (ΔG = −41.07 kcal/mol) — thermodynamically feasible but not the
+primary pathway under study.
+
+**Electrophilic aromatic substitution** also exists as a mechanistic possibility but is
+beyond the scope of this radical-addition study.
 
 ---
 
@@ -47,11 +56,11 @@ phenol-nitration/
 │   ├── spin_density.csv      # Mulliken spin densities at key atomic sites (14 rows)
 │   └── reaction_dg.csv       # Balanced-reaction ΔG and ΔH values (7 rows)
 ├── scripts/
-│   ├── fig1_pes_diagram.py              # Dual-pathway PES diagram
-│   ├── fig2_spin_density.py             # Spin density grouped bar chart
-│   ├── fig3_reaction_thermodynamics.py  # Reaction ΔG / ΔH bar chart
-│   ├── fig4_selectivity_comparison.py   # Ortho vs para selectivity chart
-│   └── generate_all_figures.py          # Master script — runs all four
+│   ├── fig1_pes_diagram.py              # PRIMARY: Dual-pathway PES diagram (ortho vs para)
+│   ├── fig2_selectivity.py              # PRIMARY: Ortho vs para selectivity comparison
+│   ├── fig3_reaction_thermodynamics.py  # SUPPORTING: Reaction ΔG / ΔH bar chart
+│   ├── figS1_spin_density.py            # SUPPLEMENTARY: Spin density grouped bar chart
+│   └── generate_all_figures.py          # Master script — runs all four in order
 ├── figures/                  # Generated PNG and PDF outputs (git-ignored)
 ├── requirements.txt
 └── README.md
@@ -61,12 +70,12 @@ phenol-nitration/
 
 ## Figures
 
-| Figure | File | Description |
-|--------|------|-------------|
-| Fig 1 | `fig1_pes_diagram` | Connected energy-level diagram for both ortho and para pathways; ΔG relative to PhOH + OH• + NO₂• = 0 |
-| Fig 2 | `fig2_spin_density` | Grouped bar chart of Mulliken spin densities (O, Ipso-C, Ortho-C, Para-C) for PhO•, PhOH•⁺, *o*-OHCHD, *p*-OHCHD |
-| Fig 3 | `fig3_reaction_thermo` | Horizontal grouped bar chart of ΔG and ΔH for all seven reactions |
-| Fig 4 | `fig4_selectivity` | Side-by-side ortho vs para comparison for RC binding, TS barrier, adduct ΔG, NO₂• capture ΔG, and overall ΔG |
+| Figure | File | Role | Description |
+|--------|------|------|-------------|
+| Fig 1 | `fig1_pes_diagram` | **Primary** | Connected energy-level diagram for both ortho and para OH• addition pathways; ΔG relative to PhOH + OH• + NO₂• = 0; includes ΔΔG‡ and ΔΔG emphasis annotations |
+| Fig 2 | `fig2_selectivity` | **Primary** | Side-by-side ortho vs para comparison for RC binding, TS barrier, adduct ΔG, NO₂• capture ΔG, and overall ΔG; summary box highlighting para advantage |
+| Fig 3 | `fig3_reaction_thermo` | Supporting | Horizontal grouped bar chart of ΔG and ΔH for the four ring-addition and NO₂• capture steps |
+| Fig S1 | `figS1_spin_density` | Supplementary | Grouped bar chart of Mulliken spin densities (O, Ipso-C, Ortho-C, Para-C) for PhO•, PhOH•⁺, *o*-OHCHD, *p*-OHCHD |
 
 All figures are saved as both high-resolution PNG (300 DPI) and PDF in `figures/`.
 
@@ -95,5 +104,5 @@ Figures are written to the `figures/` directory.
 
 † SP corrections missing for TS structures; barriers are approximate.
 
-The *para* pathway is favoured by all major thermodynamic and kinetic metrics,
+The *para* pathway is favoured by 4 of 5 thermodynamic and kinetic metrics,
 consistent with the observed preference for *para*-nitrophenol formation.
