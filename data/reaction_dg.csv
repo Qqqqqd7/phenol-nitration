@@ -1,0 +1,8 @@
+reaction_id,reaction_label,reactants,products,dG_kcal_mol,dH_kcal_mol,level_of_theory,notes
+1,H-abstraction,"PhOH + OH•","PhO• + H₂O",-41.07,-39.53,E_SP + Gcorr,Highly exergonic; competes with ring addition
+2,Ring addition ortho,"PhOH + OH•",o-OHCHD,-19.14,-28.48,E_SP + Gcorr,Less exergonic than para; dH larger than dG
+3,Ring addition para,"PhOH + OH•",p-OHCHD,-22.96,-28.66,E_SP + Gcorr,More exergonic than ortho; preferred thermodynamically
+4,NO2 capture ortho,"o-OHCHD + NO₂•","oNP + H₂O",-44.21,,E_SP + Gcorr,dH not computed; strongly exergonic
+5,NO2 capture para,"p-OHCHD + NO₂•","pNP + H₂O",-43.83,,E_SP + Gcorr,dH not computed; slightly less exergonic than ortho
+6,Overall ortho,"PhOH + OH• + NO₂•","oNP + H₂O",-63.33,,E_SP + Gcorr,Sum of ring addition ortho + NO2 capture ortho
+7,Overall para,"PhOH + OH• + NO₂•","pNP + H₂O",-66.80,,E_SP + Gcorr,Sum of ring addition para + NO2 capture para

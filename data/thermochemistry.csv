@@ -1,0 +1,37 @@
+species,role,pathway,E_SP_Ha,G_corr_Ha,G_combined_Ha,G_method,data_quality,notes
+PhOH,reactant,none,-307.468635,-0.092299,-307.376336,E_SP + Gcorr,High,Reference phenol
+OH_radical,reactant,none,-75.759340,0.013783,-75.745557,E_SP + Gcorr,High,Hydroxyl radical
+NO2_radical,reactant,none,-205.128218,0.037368,-205.090850,E_SP + Gcorr,High,Nitrogen dioxide radical
+H2O,product,none,-76.440758,0.010562,-76.430196,E_SP + Gcorr,High,Water
+PhO_radical,product,none,-306.825895,0.068755,-306.757140,E_SP + Gcorr,High,Phenoxy radical
+PhOH_cation_radical,intermediate,none,-307.237894,,,-307.237894,SP only,Low,Vertical IE only; optfreq has formula mismatch
+PhOH_OH_RC,rc,none,-383.199219,0.067243,-383.131976,E_SP + Gcorr,High,Generic pre-reaction complex
+PhOH_OH_RC_o,rc,o,-383.192754,0.067265,-383.125489,E_SP + Gcorr,High,Ortho pre-reaction complex
+PhOH_OH_RC_p,rc,p,-383.200503,0.067222,-383.133281,E_SP + Gcorr,High,Para pre-reaction complex
+PhOH_OH_TS_o,ts,o,,-383.087986,,-383.087986,E+Gcorr only,Low (no SP),Ortho OH-addition TS; SP missing
+PhOH_OH_TS_p,ts,p,,-383.093266,,-383.093266,E+Gcorr only,Low (no SP),Para OH-addition TS; SP missing
+o_OHCHD,intermediate,o,-383.226665,0.074266,-383.152399,E_SP + Gcorr,High,Ortho cyclohexadienyl adduct
+p_OHCHD,intermediate,p,-383.233108,0.074626,-383.158482,E_SP + Gcorr,High,Para cyclohexadienyl adduct
+PhO_H2O_PC,product_complex,none,-383.244685,0.064333,-383.180352,E_SP + Gcorr,High,Phenoxy·water product complex
+oNP,product,o,-511.970706,0.087225,-511.883481,E_SP + Gcorr,High,o-Nitrophenol
+pNP,product,p,-511.976235,0.087225,-511.889010,E_SP + Gcorr,High,p-Nitrophenol
+oNP_H2O_sum,product_sum,o,,,-588.313677,E_SP + Gcorr,High,oNP + H2O combined
+pNP_H2O_sum,product_sum,p,,,-588.319206,E_SP + Gcorr,High,pNP + H2O combined
+PhO_NO2_RC_o_bs,rc_no2,o,,-511.854843,,-511.854843,E+Gcorr only,Low (no SP),PhO·NO2 RC ortho broken-symmetry singlet
+PhO_NO2_RC_o_t,rc_no2,o,,-511.741279,,-511.741279,E+Gcorr only,Low (no SP),PhO·NO2 RC ortho triplet
+PhO_NO2_RC_p_bs,rc_no2,p,,-511.857684,,-511.857684,E+Gcorr only,Low (no SP),PhO·NO2 RC para broken-symmetry singlet
+PhO_NO2_RC_p_t,rc_no2,p,,-511.743455,,-511.743455,E+Gcorr only,Low (no SP),PhO·NO2 RC para triplet
+oNP_radical,intermediate,o,,,,E_SP + Gcorr,Medium,1 imaginary frequency
+pNP_radical,intermediate,p,,,,E_SP + Gcorr,Medium,1 imaginary frequency
+cis_HONO_0,reference,none,,,,incomplete,Low,Freq job may not have completed
+cis_HONO_180,reference,none,,,,E+Gcorr only,Low (no SP),Conformer reference
+PhOH_SP,reference,none,-307.468635,,,SP only,High,SP for vertical IE calculation
+PhOH_cation_SP,reference,none,-307.237894,,,SP only,High,Cation radical SP for vertical IE
+vertical_IE_eV,property,none,,,,computed,High,6.28 eV from SP difference
+vertical_IE_kcal,property,none,,,,computed,High,144.72 kcal/mol from SP difference
+reactants_PhOH_OH,reference_sum,none,,,-383.121893,E_SP + Gcorr,High,PhOH+OH• zero reference
+reactants_all,reference_sum,none,,,-588.212743,E_SP + Gcorr,High,PhOH+OH•+NO2• zero reference
+dG_o_OHCHD_capture,thermodynamics,o,,,-44.21,E_SP + Gcorr,High,o-OHCHD+NO2•->oNP+H2O
+dG_p_OHCHD_capture,thermodynamics,p,,,-43.83,E_SP + Gcorr,High,p-OHCHD+NO2•->pNP+H2O
+dG_overall_ortho,thermodynamics,o,,,-63.33,E_SP + Gcorr,High,PhOH+OH•+NO2•->oNP+H2O
+dG_overall_para,thermodynamics,p,,,-66.80,E_SP + Gcorr,High,PhOH+OH•+NO2•->pNP+H2O
