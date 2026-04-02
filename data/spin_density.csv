@@ -1,0 +1,15 @@
+species,charge_mult,O,Ipso_C,Ortho_C_max,Para_C,notes
+PhO_radical,0/2,0.377,-0.061,0.274,0.396,Phenoxy radical; high spin at O and para-C
+PhOH_cation_radical,1/2,0.160,0.250,0.133,0.455,Phenol cation radical; highest spin at para-C
+o_OHCHD,0/2,0.048,0.347,0.181,-0.158,Ortho adduct; spin shifted to ipso-C and C5(+0.515)
+p_OHCHD,0/2,0.367,-0.026,0.273,0.396,Para adduct; spin at O and para-C
+oNP_radical,0/2,0.347,-0.129,0.344,0.395,o-Nitrophenol radical intermediate; 1 imag freq
+pNP_radical,0/2,0.382,-0.099,0.295,0.378,p-Nitrophenol radical intermediate; 1 imag freq
+PhOH,0/1,0.000,0.000,0.000,0.000,Closed-shell reference; zero spin density
+NO2_radical,0/2,,,,, Nitrogen dioxide radical (N-centered radical)
+OH_radical,0/2,,,,, Hydroxyl radical (O-centered radical)
+oNP,0/1,0.000,0.000,0.000,0.000,Closed-shell o-nitrophenol product
+pNP,0/1,0.000,0.000,0.000,0.000,Closed-shell p-nitrophenol product
+PhOH_OH_RC_o,0/2,,,,,Pre-reaction complex; spin primarily on OH oxygen
+PhOH_OH_RC_p,0/2,,,,,Pre-reaction complex; spin primarily on OH oxygen
+PhOH_OH_TS_o,0/2,,,,,Ortho TS; radical character shared between OH and ring

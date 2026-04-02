@@ -1,0 +1,16 @@
+# Generated figures (build artefacts)
+figures/*.png
+figures/*.pdf
+# Keep the placeholder so the directory is tracked
+!figures/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Editor / OS
+.DS_Store
+*.swp
+*~
